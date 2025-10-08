@@ -1,3 +1,3 @@
-require("nvim-treesitter.install").compilers = { "clang" }
+--require("nvim-treesitter.install").compilers = { "clang" }
 
 return {}
