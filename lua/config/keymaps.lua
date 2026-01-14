@@ -13,7 +13,13 @@ set("n", "<S-l>", "$", { desc = "Go to end of line" })
 set("n", "<S-Left>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 set("n", "<S-Right>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
-vim.keymap.set("n", "<leader><space>", LazyVim.pick("files", { root = false }), { desc = "Find Files (cwd)" })
+set("n", "<leader><space>", LazyVim.pick("files", { root = false }), { desc = "Find Files (cwd)" })
+set("n", "<leader>t", function()
+  Snacks.terminal(nil, { cwd = vim.uv.cwd() })
+end, { desc = "Terminal" })
+set("n", "<leader>T", function()
+  Snacks.terminal(nil, { cwd = vim.uv.cwd(), count = 2 })
+end, { desc = "Terminal 2" })
 
 local mc = require("multicursor-nvim")
 -- Add or skip cursor above/below the main cursor.
